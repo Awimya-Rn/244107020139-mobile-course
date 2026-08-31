@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/01-week-1-mobile-development-ecosystem-flutter-refresh.iml" filepath="$PROJECT_DIR$/.idea/01-week-1-mobile-development-ecosystem-flutter-refresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my_first_app.iml" filepath="$PROJECT_DIR$/my_first_app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/android/my_first_app_android.iml" filepath="$PROJECT_DIR$/android/my_first_app_android.iml" />
     </modules>
   </component>
 </project>
