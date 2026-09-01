@@ -1,17 +1,23 @@
-# my_first_app
+# Dart refresh
+## Dasar Dart yang perlu diingat
+![image](./screenshots/image%20copy.png)
 
-A new Flutter project.
+## Null safety
+![image](./screenshots/image%20copy%206.png)
 
-## Getting Started
+## Latihan mandiri
+![image](./screenshots/image%20copy%202.png)
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+# Menyiapkan environment
+## Instalasi dan verifikasi
+![image](./screenshots/image.png)
+![image](./screenshots/image%20copy%203.png)
+![image](./screenshots/image%20copy%207.png)
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Target perangkat
+![image](./screenshots/image%20copy%205.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+# Praktikum: aplikasi Flutter pertama
+![image](./screenshots/image%20copy%204.png)
