@@ -21,3 +21,6 @@
 
 # Praktikum: aplikasi Flutter pertama
 ![image](./screenshots/image%20copy%204.png)
+
+# Mini assignment
+![image](./screenshots/image%20copy%208.png)
