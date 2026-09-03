@@ -11,13 +11,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: const Text("Hello World")),
         body: const Center(
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             Icon(Icons.school, size: 72),
             SizedBox(height: 16),
             Text('Mokhammad Ilham', style: TextStyle(fontSize: 24)),
-            Text('Pemrograman Mobile - Minggu 1')
+            Text('Pemrograman Mobile - Minggu 1'),
+            Text('NIM: 244107020139'),
+            Text('Kelas: TI-3F'),
           ]), 
         ),
       ),
