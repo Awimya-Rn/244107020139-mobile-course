@@ -24,7 +24,7 @@ class _DashboardAppState extends State<DashboardApp> {
         brightness: Brightness.dark,
         colorSchemeSeed: Colors.indigo,
       ),
-      themeMode: isDark ? ThemeMode.dark : ThemeMode.system,
+      themeMode: isDark ? ThemeMode.dark : ThemeMode.light,
       home: DashboardPage(
         isDark: isDark,
         onDarkChanged: (value) => setState(() => isDark = value),
@@ -63,23 +63,70 @@ class DashboardPage extends StatelessWidget {
           ),
         ],
       ),
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          final columns = constraints.maxWidth >= 500 ? 2 : 1;
-          return GridView.count(
-            padding: const EdgeInsets.all(16),
-            crossAxisCount: columns,
-            crossAxisSpacing: 16,
-            mainAxisSpacing: 16,
-            childAspectRatio: 2.6,
-            children: const [
-              DashboardCard(title: 'Assignments', value: '8'),
-              DashboardCard(title: 'Attendance', value: '92%'),
-              DashboardCard(title: 'Portfolio', value: 'Ready'),
-              DashboardCard(title: 'Current week', value: '02'),
+      body: Column(
+        children: [
+          const ProfileHeader(
+            name: "Mokh. Ilham",
+            nim: "244107020139",
+            email: "244107020139@student.polinema.ac.id",
+          ),
+          Expanded(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                final columns = constraints.maxWidth >= 700 ? 2 : 1;
+                return GridView.count(
+                  padding: const EdgeInsets.all(16),
+                  crossAxisCount: columns,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 2.6,
+                  children: const [
+                    DashboardCard(title: 'Assignments', value: '8'),
+                    DashboardCard(title: 'Attendance', value: '92%'),
+                    DashboardCard(title: 'Portfolio', value: 'Ready'),
+                    DashboardCard(title: 'Current week', value: '02'),
+                  ],
+                );
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ProfileHeader extends StatelessWidget {
+  const ProfileHeader({
+    required this.name,
+    required this.nim,
+    required this.email,
+    super.key,
+  });
+  final String name;
+  final String nim;
+  final String email;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Row(
+        children: [
+          CircleAvatar(
+            radius: 30,
+            child: Icon(Icons.person, size: 30),
+          ),
+          const SizedBox(width: 12),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(name, style: Theme.of(context).textTheme.titleMedium),
+              Text(nim, style: Theme.of(context).textTheme.bodyMedium),
+              Text(email, style: Theme.of(context).textTheme.bodyMedium),
             ],
-          );
-        },
+          ),
+        ],
       ),
     );
   }
