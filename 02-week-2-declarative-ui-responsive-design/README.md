@@ -43,6 +43,8 @@ GridView.count(
 )
 ```
 
+![Image](./screenshots/image%20copy%206.png)
+
 - **Responsif**: tidak — `crossAxisCount` konstan, sehingga di layar sempit (mis. 320–360dp) 2 kolom bisa membuat setiap sel terlalu sempit; di layar lebar (tablet/desktop) sel jadi terlalu lebar dan proporsi kartu janggal.
 - **Scroll**: bawaan (sliver-based) — jika kartu bertambah banyak, otomatis bisa di-scroll tanpa kode tambahan.
 - **Build**: `GridView.count` membangun semua child sekaligus (eager), bukan lazy. Untuk 4 kartu tidak masalah, tapi tidak ideal jika daftar kartu dinamis dan panjang (sebaiknya `GridView.builder` untuk kasus itu).
@@ -79,6 +81,8 @@ LayoutBuilder(
   },
 )
 ```
+
+![Image](./screenshots/image%20copy%208.png)
 
 - **Responsif**: kontrol penuh per breakpoint — bisa mengubah jumlah kolom, aspect ratio, bahkan ukuran kartu berbeda per baris (mis. kartu pertama lebih lebar). `GridView.count` tidak bisa membuat sel tidak seragam seperti ini.
 - **Scroll**: **tidak otomatis**. Lupa membungkus dengan `SingleChildScrollView` akan memicu overflow vertikal begitu jumlah kartu melebihi tinggi layar — ini langsung berkaitan dengan bagian 2 di bawah.
@@ -128,6 +132,7 @@ class DashboardCard extends StatelessWidget {
   }
 }
 ```
+
 
 Jika kartu ini dipakai dalam `GridView.count(childAspectRatio: 2.6, ...)`, tinggi sel sudah dipatok ketat oleh rasio tersebut. `Expanded` membuat `title` tidak melebar ke luar secara horizontal — tapi teks tetap boleh **wrap** ke bawah, dan `Row` (default `crossAxisAlignment.center`, tinggi = child tertinggi) mendorong total tinggi `Padding`/`Card` melebihi tinggi sel. Hasilnya: *"A RenderFlex overflowed by N pixels on the bottom"*.
 
