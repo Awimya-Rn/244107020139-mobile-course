@@ -74,18 +74,34 @@ class DashboardPage extends StatelessWidget {
             child: LayoutBuilder(
               builder: (context, constraints) {
                 final columns = constraints.maxWidth >= 700 ? 2 : 1;
-                return GridView.count(
+                final cards = [
+                  const DashboardCard(title: 'Assignments', value: '8'),
+                  const DashboardCard(title: 'Attendance', value: '92%'),
+                  const DashboardCard(title: 'Portfolio', value: 'Ready'),
+                  const DashboardCard(title: 'Current week', value: '02'),
+                ];
+
+                final rows = <Widget>[];
+                for (var i = 0; i < cards.length; i += columns) {
+                  final rowChildren = cards.skip(i).take(columns).map((c) {
+                    return Expanded(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8),
+                        child: c,
+                      ),
+                    );
+                  }).toList();
+                  while (rowChildren.length < columns) {
+                    rowChildren.add(
+                      const Expanded(child: SizedBox()),
+                    ); 
+                  }
+                  rows.add(Row(children: rowChildren));
+                }
+
+                return SingleChildScrollView(
                   padding: const EdgeInsets.all(16),
-                  crossAxisCount: columns,
-                  crossAxisSpacing: 16,
-                  mainAxisSpacing: 16,
-                  childAspectRatio: 2.6,
-                  children: const [
-                    DashboardCard(title: 'Assignments', value: '8'),
-                    DashboardCard(title: 'Attendance', value: '92%'),
-                    DashboardCard(title: 'Portfolio', value: 'Ready'),
-                    DashboardCard(title: 'Current week', value: '02'),
-                  ],
+                  child: Column(children: rows),
                 );
               },
             ),
@@ -113,10 +129,7 @@ class ProfileHeader extends StatelessWidget {
       padding: const EdgeInsets.all(16),
       child: Row(
         children: [
-          CircleAvatar(
-            radius: 30,
-            child: Icon(Icons.person, size: 30),
-          ),
+          CircleAvatar(radius: 30, child: Icon(Icons.person, size: 30)),
           const SizedBox(width: 12),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
