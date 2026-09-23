@@ -38,6 +38,7 @@ Laporan mini project Week 3: aplikasi ToDo dengan navigasi (GoRouter) dan state 
 │   │   ├── home_page.dart
 │   │   ├── detail_page.dart
 │   │   ├── todo_page.dart
+│   │   ├── stats_page.dart
 │   │   └── product_page.dart
 │   ├── providers/
 │   │   ├── todo_provider.dart
@@ -74,11 +75,11 @@ flutter test
 
 Halaman **Home** menampilkan daftar 10 item; setiap item menuju halaman **Detail** lewat `context.go('/detail/:id')` dengan path parameter.
 
-![Home page dan kode home_page.dart](screenshots/Konsep_navigasi.png)
+![Home page dan kode home_page.dart](screenshots/Konsep%20navigasi.png)
 
 Halaman **Detail** membaca `id` dari `state.pathParameters` dan menampilkannya.
 
-![Detail page dan kode detail_page.dart](screenshots/Konsep_navigasi1.png)
+![Detail page dan kode detail_page.dart](screenshots/Konsep%20navigasi1.png)
 
 ### Praktikum 2 — Aplikasi ToDo dengan Riverpod
 
