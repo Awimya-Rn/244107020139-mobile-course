@@ -1,0 +1,39 @@
+import 'package:dio/dio.dart';
+
+import '../models/post.dart';
+
+class PostRepository {
+  PostRepository(this._dio);
+  final Dio _dio;
+
+  Future<List<Post>> fetchPosts({int? page, int limit = 10}) async {
+    final Map<String, dynamic> queryParameters = {};
+    if (page != null) {
+      queryParameters['_page'] = page;
+      queryParameters['_limit'] = limit;
+    }
+    final response = await _dio.get<List>(
+      '/posts',
+      queryParameters: queryParameters.isNotEmpty ? queryParameters : null,
+    );
+    final data = response.data ?? [];
+    return data.whereType<Map<String, dynamic>>().map(Post.fromJson).toList();
+  }
+
+
+  Future<List<Post>> fetchPostsPage({required int page, int limit = 10}) async {
+    final response = await _dio.get<List>(
+      '/posts',
+      queryParameters: {'_page': page, '_limit': limit},
+    );
+    final data = response.data ?? [];
+    return data.whereType<Map<String, dynamic>>().map(Post.fromJson).toList();
+  }
+
+  Future<Post> fetchPostById(int id) async {
+    final response = await _dio.get<Map<String, dynamic>>('/posts/$id');
+    final data = response.data ?? {};
+    return Post.fromJson(data);
+  }
+}
+
