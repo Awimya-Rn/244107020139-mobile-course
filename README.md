@@ -1,6 +1,14 @@
-# my_first_app
+# Pemrograman Mobile
 
-A new Flutter project.
+Repository ini berisi kumpulan kode sumber, praktikum, mini assignment, dan dokumentasi refleksi pembelajaran mata kuliah Pemrograman Mobile.
+
+## Identitas Mahasiswa
+
+- Nama: Mokhammad Ilham Putra Wijaya
+- NIM: 244107020139
+- Kelas: TI-3F
+- Program Studi: D4 Teknik Informatika
+- Jurusan: Teknologi Informasi
 
 ## Getting Started
 
