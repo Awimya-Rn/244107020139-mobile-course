@@ -43,7 +43,7 @@ lib/
 └── widgets/note_tile.dart
 test/note_test.dart
 docs/
-screenshots/
+screenshot/
 ```
 
 ## Arsitektur
@@ -81,13 +81,13 @@ Tema dan waktu terakhir dibuka tersimpan di perangkat.
 
 | Tema terang | Tema gelap |
 |---|---|
-| ![Pengaturan tema terang](screenshots/Preferensi.png) | ![Pengaturan tema gelap](screenshots/Preferensi_1.png) |
+| ![Pengaturan tema terang](screenshot/Preferensi.png) | ![Pengaturan tema gelap](screenshot/Preferensi_1.png) |
 
 ### 2. CRUD catatan (SQLite)
 
 | Daftar catatan | Tambah catatan | Detail catatan |
 |---|---|---|
-| ![Daftar catatan](screenshots/CRUD.png) | ![Dialog catatan baru](screenshots/CRUD_1.png) | ![Detail catatan](screenshots/CRUD_2.png) |
+| ![Daftar catatan](screenshot/CRUD.png) | ![Dialog catatan baru](screenshot/CRUD_1.png) | ![Detail catatan](screenshot/CRUD_2.png) |
 
 ### 3. Dirty flag dan sinkronisasi
 
@@ -96,14 +96,14 @@ Tema dan waktu terakhir dibuka tersimpan di perangkat.
 
 | Sebelum sync | Sesudah sync |
 |---|---|
-| ![Badge dirty sebelum sync](screenshots/DirtyFlag.png) | ![Setelah sync](screenshots/DirtyFlag_1.png) |
+| ![Badge dirty sebelum sync](screenshot/DirtyFlag.png) | ![Setelah sync](screenshot/DirtyFlag_1.png) |
 
 ### 4. Cache-first posts
 
 Daftar posts tampil dari cache lokal terlebih dahulu, lalu diperbarui dari jaringan di background.
 
-![Posts cache-first](screenshots/CacheFirst.png)
-![Catatan saat offline](screenshots/CacheFirst_offline.png) 
+![Posts cache-first](screenshot/CacheFirst.png)
+![Catatan saat offline](screenshot/CacheFirst_offline.png) 
 
 ## Testing
 
