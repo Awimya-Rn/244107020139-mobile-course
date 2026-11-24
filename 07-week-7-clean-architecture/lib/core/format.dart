@@ -8,3 +8,14 @@ int? parseNoteId(String? raw) {
   final id = int.tryParse(raw);
   return (id == null || id < 0) ? null : id;
 }
+
+/// Memvalidasi apakah format string email sesuai dengan standar format email.
+bool isValidEmail(String? email) {
+  if (email == null) return false;
+  final trimmed = email.trim();
+  if (trimmed.isEmpty) return false;
+  final emailRegex = RegExp(
+    r'^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$',
+  );
+  return emailRegex.hasMatch(trimmed);
+}
